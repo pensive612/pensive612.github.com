@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: general | Adamin]]></title>
+  <link href="http://pensive612.github.com/blog/categories/general/atom.xml" rel="self"/>
+  <link href="http://pensive612.github.com/"/>
+  <updated>2013-01-20T21:21:55-08:00</updated>
+  <id>http://pensive612.github.com/</id>
+  <author>
+    <name><![CDATA[Adamin]]></name>
+    <email><![CDATA[github@adamin.net]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[hellow orld]]></title>
+    <link href="http://pensive612.github.com/blog/2013/01/20/hellow-orld/"/>
+    <updated>2013-01-20T20:28:00-08:00</updated>
+    <id>http://pensive612.github.com/blog/2013/01/20/hellow-orld</id>
+    <content type="html"><![CDATA[<p>This blog is going to be some random musings from myself.</p>
+
+<p>The first thing we should talk about.  Yup.  I saw it too.</p>
+
+<!-- more -->
+
+
+<h4>Hellow Orld...</h4>
+
+<p>But that's really the point for me.  I'm learning.  I'm doing my best in this
+here world just like the rest of us.</p>
+
+<p>And its a good reminder that learning is as much about the mistakes as it is the
+right answers.</p>
+
+<p>I'm happy to teach, and I'm grateful to be taught.</p>
+
+<p>So, lets see how this goes...</p>
+
+<p><em>Welcome, and hellow orld.</em></p>
+]]></content>
+  </entry>
+  
+</feed>
