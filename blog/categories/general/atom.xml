@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Adamin]]></title>
-  <link href="http://pensive612.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: general | Adamin]]></title>
+  <link href="http://pensive612.github.com/blog/categories/general/atom.xml" rel="self"/>
   <link href="http://pensive612.github.com/"/>
   <updated>2013-01-20T21:02:26-08:00</updated>
   <id>http://pensive612.github.com/</id>
@@ -22,17 +22,17 @@
 
 <p>The first thing we should talk about.  Yup.  I saw it too.</p>
 
-<h4>Hellow Orld&#8230;</h4>
+<h4>Hellow Orld...</h4>
 
-<p>But that&#8217;s really the point for me.  I&#8217;m learning.  I&#8217;m doing my best in this
+<p>But that's really the point for me.  I'm learning.  I'm doing my best in this
 here world just like the rest of us.</p>
 
 <p>And its a good reminder that learning is as much about the mistakes as it is the
 right answers.</p>
 
-<p>I&#8217;m happy to teach, and I&#8217;m grateful to be taught.</p>
+<p>I'm happy to teach, and I'm grateful to be taught.</p>
 
-<p>So, lets see how this goes&#8230;</p>
+<p>So, lets see how this goes...</p>
 
 <p><em>Welcome, and hellow orld.</em></p>
 ]]></content>
