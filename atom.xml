@@ -4,11 +4,11 @@
   <title><![CDATA[Adamin]]></title>
   <link href="http://pensive612.github.com/atom.xml" rel="self"/>
   <link href="http://pensive612.github.com/"/>
-  <updated>2013-01-20T21:02:26-08:00</updated>
+  <updated>2013-01-20T21:21:55-08:00</updated>
   <id>http://pensive612.github.com/</id>
   <author>
     <name><![CDATA[Adamin]]></name>
-    
+    <email><![CDATA[github@adamin.net]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>This blog is going to be some random musings from myself.</p>
 
 <p>The first thing we should talk about.  Yup.  I saw it too.</p>
+
+<!-- more -->
+
 
 <h4>Hellow Orld&#8230;</h4>
 
