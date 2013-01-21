@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Adamin]]></title>
-  <link href="http://pensive612.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: parse | Adamin]]></title>
+  <link href="http://pensive612.github.com/blog/categories/parse/atom.xml" rel="self"/>
   <link href="http://pensive612.github.com/"/>
   <updated>2013-01-20T22:13:37-08:00</updated>
   <id>http://pensive612.github.com/</id>
@@ -18,7 +18,7 @@
     <link href="http://pensive612.github.com/blog/2013/01/20/playing-with-parse/"/>
     <updated>2013-01-20T21:53:00-08:00</updated>
     <id>http://pensive612.github.com/blog/2013/01/20/playing-with-parse</id>
-    <content type="html"><![CDATA[<p>One of the companies I&#8217;ve been really interested in lately is
+    <content type="html"><![CDATA[<p>One of the companies I've been really interested in lately is
 <a href="http://www.parse.com">Parse</a>.</p>
 
 <p>Something about what they do and how they approach it.  And especially how fast it seems they improve themselves.</p>
@@ -26,7 +26,7 @@
 <!-- more -->
 
 
-<p>I&#8217;m going to try and do a series on my <a href="http://pensive612.github.com/blog/categories/parse/">learnings with Parse</a> because:</p>
+<p>I'm going to try and do a series on my <a href="/blog/categories/parse/">learnings with Parse</a> because:</p>
 
 <ul>
 <li>I was inspired by this position: <a href="https://parse.com/jobs#devevang">Parse Developer Evangelist</a></li>
@@ -39,34 +39,6 @@
 <p>I plan on posting my journey through learning about Parse here.</p>
 
 <p>And if you guys have any questions, let me know.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[hellow orld]]></title>
-    <link href="http://pensive612.github.com/blog/2013/01/20/hellow-orld/"/>
-    <updated>2013-01-20T20:28:00-08:00</updated>
-    <id>http://pensive612.github.com/blog/2013/01/20/hellow-orld</id>
-    <content type="html"><![CDATA[<p>This blog is going to be some random musings from myself.</p>
-
-<p>The first thing we should talk about.  Yup.  I saw it too.</p>
-
-<!-- more -->
-
-
-<h4>Hellow Orld&#8230;</h4>
-
-<p>But that&#8217;s really the point for me.  I&#8217;m learning.  I&#8217;m doing my best in this
-here world just like the rest of us.</p>
-
-<p>And its a good reminder that learning is as much about the mistakes as it is the
-right answers.</p>
-
-<p>I&#8217;m happy to teach, and I&#8217;m grateful to be taught.</p>
-
-<p>So, lets see how this goes&#8230;</p>
-
-<p><em>Welcome, and hellow orld.</em></p>
 ]]></content>
   </entry>
   
