@@ -11,6 +11,8 @@ This blog is going to be some random musings from myself.
 
 The first thing we should talk about.  Yup.  I saw it too.
 
+<!-- more -->
+
 #### Hellow Orld...
 
 But that's really the point for me.  I'm learning.  I'm doing my best in this
