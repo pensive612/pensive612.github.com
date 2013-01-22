@@ -4,7 +4,7 @@
   <title><![CDATA[Category: parse | Adamin]]></title>
   <link href="http://pensive612.github.com/blog/categories/parse/atom.xml" rel="self"/>
   <link href="http://pensive612.github.com/"/>
-  <updated>2013-01-21T17:42:10-08:00</updated>
+  <updated>2013-01-21T17:44:37-08:00</updated>
   <id>http://pensive612.github.com/</id>
   <author>
     <name><![CDATA[Adamin]]></name>
@@ -24,7 +24,8 @@
 
 <p>Here's the important steps as I've seen them so far:</p>
 
-<p><code>javascript Extend the Parse.Object
+<p><code>javascript
+// Extend the Parse.Object
 var Character = Parse.Object.extend("Character");
 </code></p>
 
@@ -34,18 +35,21 @@ var Character = Parse.Object.extend("Character");
 <p><em>Keep in mind that Classes get CapitalCase.
 And instances will get snakeCase</em>.  It helps to be able to decipher variable types at a quick glance.</p>
 
-<p><code>javascript Create a new instance of the object
+<p><code>javascript
+// Create a new instance of the object
 var character = new Character();
 </code></p>
 
 <p>Now its time to set/get some keys on the object</p>
 
-<p><code>javascript Setting a key/value on the instance
+<p><code>javascript
+// Setting a key/value on the instance
 character.set('name', 'nelson');
 </code></p>
 
 <p>And I'm sure you know it doesn't mean a thing til you save that thing.
-<code>javascript save it to the database
+<code>javascript
+// Save it to the database
 character.save();
 </code></p>
 
