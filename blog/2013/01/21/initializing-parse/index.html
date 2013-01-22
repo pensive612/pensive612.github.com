@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Adamin</title>
+  <title>Initializing Parse - Adamin</title>
   <meta name="author" content="Adamin">
 
   
-  <meta name="description" content="Blog Archive 2013 Basic Objects in Parse
-Jan 21 2013 posted in parse Initializing Parse
-Jan 21 2013 posted in parse Parse on CodeAcademy
-Jan 21 2013 &hellip;">
+  <meta name="description" content="Okay, picking up off the last section where I talked about my experience with starting
+the Parse Lesson on CodeAcademy. I now have my Parse account &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +19,7 @@ Jan 21 2013 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pensive612.github.com/blog/archives/">
+  <link rel="canonical" href="http://pensive612.github.com/blog/2013/01/21/initializing-parse/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,92 +77,119 @@ Jan 21 2013 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Initializing Parse</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T16:30:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p><img class="right" src="http://puu.sh/1QRgk"></p>
 
-  
-  <h2>2013</h2>
+<p>Okay, picking up off the last section where I talked about my experience with starting
+the Parse Lesson on CodeAcademy.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/01/21/basic-objects-in-parse/">Basic Objects in Parse</a></h1>
-<time datetime="2013-01-21T17:03:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>21</span> <span class='year'>2013</span></time>
+<p>I now have my Parse account and have been instructed to create an app and use my credentials in the app.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/parse/'>parse</a></span>
-</footer>
+<p>Easy enough.  I just clicked on the dropdown, created my app and pressed the copy buttons
+to get my strings.  Now time to initialize Parse with my credentials.</p>
 
-
-</article>
+<!-- more -->
 
 
+<p>The next part is super easy.  Just calling the initialize method on the Parse object.
+Pass 2 parameters.  Both your <em>application_id</em> and <em>javscript_key</em>.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/01/21/initializing-parse/">Initializing Parse</a></h1>
-<time datetime="2013-01-21T16:30:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>21</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/parse/'>parse</a></span>
-</footer>
-
-
-</article>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// Initializing</span>
+</span><span class='line'><span class="nx">Parse</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="s2">&quot;application_id&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript_key&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>Here&#8217;s a cool trick, If you have a wide screen, and you maximize it, the result window
+will go next to the script window.  Makes it easier to Run the code.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/01/21/parse-on-codeacademy/">Parse on CodeAcademy</a></h1>
-<time datetime="2013-01-21T16:10:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>21</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/parse/'>parse</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/01/20/playing-with-parse/">Playing With Parse</a></h1>
-<time datetime="2013-01-20T21:53:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>20</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/parse/'>parse</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2013/01/20/hellow-orld/">hellow orld</a></h1>
-<time datetime="2013-01-20T20:28:00-08:00" pubdate><span class='month'>Jan</span> <span class='day'>20</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/general/'>general</a></span>
-</footer>
-
-
-</article>
-
+<p><img src="http://puu.sh/1QRvh"></p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Adamin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T16:30:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/parse/'>parse</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pensive612.github.com/blog/2013/01/21/initializing-parse/" data-via="" data-counturl="http://pensive612.github.com/blog/2013/01/21/initializing-parse/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/21/parse-on-codeacademy/" title="Previous Post: Parse on CodeAcademy">&laquo; Parse on CodeAcademy</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/21/basic-objects-in-parse/" title="Next Post: Basic Objects in Parse">Basic Objects in Parse &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -249,7 +274,10 @@ Jan 21 2013 &hellip;">
       var disqus_shortname = 'adamin';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pensive612.github.com/blog/2013/01/21/initializing-parse/';
+        var disqus_url = 'http://pensive612.github.com/blog/2013/01/21/initializing-parse/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

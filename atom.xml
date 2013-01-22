@@ -4,7 +4,7 @@
   <title><![CDATA[Adamin]]></title>
   <link href="http://pensive612.github.com/atom.xml" rel="self"/>
   <link href="http://pensive612.github.com/"/>
-  <updated>2013-01-21T16:02:33-08:00</updated>
+  <updated>2013-01-21T17:42:10-08:00</updated>
   <id>http://pensive612.github.com/</id>
   <author>
     <name><![CDATA[Adamin]]></name>
@@ -12,6 +12,216 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Basic Objects in Parse]]></title>
+    <link href="http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse/"/>
+    <updated>2013-01-21T17:03:00-08:00</updated>
+    <id>http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse</id>
+    <content type="html"><![CDATA[<p>Creating an object in <a href="https://parse.com/">Parse</a> is the foundation of the API.</p>
+
+<p>Without it.  You really don&#8217;t have anything.  Not even this blog post.</p>
+
+<p>Here&#8217;s the important steps as I&#8217;ve seen them so far:</p>
+
+<figure class='code'><figcaption><span>Extend the Parse.Object</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">Character</span> <span class="o">=</span> <span class="nx">Parse</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;Character&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p><em>Keep in mind that Classes get CapitalCase.
+And instances will get snakeCase</em>.  It helps to be able to decipher variable types at a quick glance.</p>
+
+<figure class='code'><figcaption><span>Create a new instance of the object</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">character</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Character</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now its time to set/get some keys on the object</p>
+
+<figure class='code'><figcaption><span>Setting a key/value on the instance</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">character</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;nelson&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And I&#8217;m sure you know it doesn&#8217;t mean a thing til you save that thing.</p>
+
+<figure class='code'><figcaption><span>save it to the database</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">character</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Still frustrating that I&#8217;m dealing with bugs in the CodeAcademy/Parse tutorial app.
+As well as inconsistencies in the text.</p>
+
+<p>I&#8217;ve now created my object.  I&#8217;m fairly certain its correct.  But can&#8217;t get the code
+to run.  And have no idea if its my code or the checker.</p>
+
+<p>This is what I have:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// extend the subClass</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">Post</span> <span class="o">=</span> <span class="nx">Parse</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;Post&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// create instances of the subClass</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Post</span><span class="p">();</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">post2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Post</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// set and save the objects</span>
+</span><span class='line'><span class="nx">post</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;got some text in here&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">post</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">post2</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;look at me, saving text&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">post2</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Argh.  Might have to skip over the Parse tutorial for now and come back to it.</p>
+
+<p>Oh wait!  After waiting long enough to type this entry out.  I&#8217;m now allowed to
+test my code.  That i know is correct.</p>
+
+<p><img src="http://puu.sh/1QSsH"></p>
+
+<p>Oops try again.
+Wait, &#8216;like&#8217; key?  That&#8217;s not even in this step.</p>
+
+<p>Bah.</p>
+
+<p>Hint repeating the exact same text above it?</p>
+
+<p><img src="http://puu.sh/1QSx6"></p>
+
+<p>Bah.</p>
+
+<p>Looks like I picked the wrong week to quit sniffing glue.</p>
+
+<p>Another time then&#8230;</p>
+
+<h4>Wait!</h4>
+
+<p>Hoozah!  The coderunner has finally decided it will give my exact same code another
+chance.  And guess what!  It works!</p>
+
+<p>Woot woot.</p>
+
+<p>Hmm.  maybe this is some new alternative learning method.  Make you read your code a hundred
+times.  Make you read the docs a hundred times.  Get frustrated.  yell, research.</p>
+
+<p>And just when its realy sunk in.  BAM!  That very same original code is now acceptable.</p>
+
+<p>Very alternative&#8230; Kudos Parse and CodeAcademy.  Kudos.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Initializing Parse]]></title>
+    <link href="http://pensive612.github.com/blog/2013/01/21/initializing-parse/"/>
+    <updated>2013-01-21T16:30:00-08:00</updated>
+    <id>http://pensive612.github.com/blog/2013/01/21/initializing-parse</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://puu.sh/1QRgk"></p>
+
+<p>Okay, picking up off the last section where I talked about my experience with starting
+the Parse Lesson on CodeAcademy.</p>
+
+<p>I now have my Parse account and have been instructed to create an app and use my credentials in the app.</p>
+
+<p>Easy enough.  I just clicked on the dropdown, created my app and pressed the copy buttons
+to get my strings.  Now time to initialize Parse with my credentials.</p>
+
+<!-- more -->
+
+
+<p>The next part is super easy.  Just calling the initialize method on the Parse object.
+Pass 2 parameters.  Both your <em>application_id</em> and <em>javscript_key</em>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// Initializing</span>
+</span><span class='line'><span class="nx">Parse</span><span class="p">.</span><span class="nx">initialize</span><span class="p">(</span><span class="s2">&quot;application_id&quot;</span><span class="p">,</span> <span class="s2">&quot;javascript_key&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here&#8217;s a cool trick, If you have a wide screen, and you maximize it, the result window
+will go next to the script window.  Makes it easier to Run the code.</p>
+
+<p><img src="http://puu.sh/1QRvh"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Parse on CodeAcademy]]></title>
+    <link href="http://pensive612.github.com/blog/2013/01/21/parse-on-codeacademy/"/>
+    <updated>2013-01-21T16:10:00-08:00</updated>
+    <id>http://pensive612.github.com/blog/2013/01/21/parse-on-codeacademy</id>
+    <content type="html"><![CDATA[<p>So this is awesome.  Really awesome.</p>
+
+<p><a href="http://www.codecademy.com/">CodeAcademy</a> has gone out and created an <a href="http://www.codecademy.com/tracks/apis">API course</a>.</p>
+
+<p>I think its going to do really well.  And they were very clever to get big companies
+with useful APIs to join in and write mini lessons to use their own APIs.</p>
+
+<p>And what more could I ask for.  <a href="https://parse.com/">Parse</a> is in there.</p>
+
+<p><img src="http://puu.sh/1QR2M"></p>
+
+<p>Here&#8217;s the honest feedback so far.</p>
+
+<!-- more -->
+
+
+<p>I&#8217;ve been doing them in order.  Starting with the general HTTP lesson.  Straight forward
+nice.  Made me feel like I have a chance and grasping all this.</p>
+
+<p>Then doing them in order, I got to the YouTube lesson.  Very cool.  They did a good job of
+making the Google API not feel intimidating.  And I was able to fly through it pretty quickly.</p>
+
+<p>Second was <a href="https://soundcloud.com/">SoundCloud</a>.  I think this is a really cool project, and I love how they give it all to you in an API.
+Promptly got through creating a player, an interface to upload recordings, and view comments in real time.  Awesome.</p>
+
+<p>And here we are Parse.</p>
+
+<p>Ready to get into it.</p>
+
+<h4>First impression?</h4>
+
+<p>Well.  it looks like they&#8217;re the first of the lessons that I&#8217;ve encountered that is
+using their own interface inside the Results window.  Could be cool?!</p>
+
+<p>Wah, wah.  Its super buggy.  And looking at the forums.  People are reporting the same
+thing.  I hate that the first chapter has taken me longer than almost any other entire section.</p>
+
+<p>But I have faith that they will fix this.  And when they do.  I&#8217;ll jump back and edit this.</p>
+
+<p>What they&#8217;re trying to do is quite complex.  And CodeAcademy is prone to bugs.  So I&#8217;ll chalk
+this up as &#8216;working out the kinks&#8217;.</p>
+
+<h4>Okay, I&#8217;ve gotten past the first section.  Hopefully things clear up on the second.</h4>
+
+<p>Doh.  Its the first API lesson that requires you to go and create an account.</p>
+
+<p>I&#8217;m guessing the fact that their API is writing data is why they chose not to make a test API key.</p>
+
+<p>Obviously it will probably get them some signups as well.  But it did take actual setup unlike any of the others.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Playing With Parse]]></title>

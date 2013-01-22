@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Basic Objects in Parse - Adamin</title>
+  <meta name="author" content="Adamin">
+
+  
+  <meta name="description" content="Creating an object in Parse is the foundation of the API. Without it. You really don&#8217;t have anything. Not even this blog post. Here&#8217;s the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Adamin" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35676539-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Adamin</a></h1>
+  
+    <h2>Hellow Orld.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pensive612.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/octopress-cheatsheet">Octo Sheet</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Basic Objects in Parse</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T17:03:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Creating an object in <a href="https://parse.com/">Parse</a> is the foundation of the API.</p>
+
+<p>Without it.  You really don&#8217;t have anything.  Not even this blog post.</p>
+
+<p>Here&#8217;s the important steps as I&#8217;ve seen them so far:</p>
+
+<figure class='code'><figcaption><span>Extend the Parse.Object</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">Character</span> <span class="o">=</span> <span class="nx">Parse</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;Character&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
+
+
+<p><em>Keep in mind that Classes get CapitalCase.
+And instances will get snakeCase</em>.  It helps to be able to decipher variable types at a quick glance.</p>
+
+<figure class='code'><figcaption><span>Create a new instance of the object</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">character</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Character</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now its time to set/get some keys on the object</p>
+
+<figure class='code'><figcaption><span>Setting a key/value on the instance</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">character</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;nelson&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And I&#8217;m sure you know it doesn&#8217;t mean a thing til you save that thing.</p>
+
+<figure class='code'><figcaption><span>save it to the database</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">character</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Still frustrating that I&#8217;m dealing with bugs in the CodeAcademy/Parse tutorial app.
+As well as inconsistencies in the text.</p>
+
+<p>I&#8217;ve now created my object.  I&#8217;m fairly certain its correct.  But can&#8217;t get the code
+to run.  And have no idea if its my code or the checker.</p>
+
+<p>This is what I have:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// extend the subClass</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">Post</span> <span class="o">=</span> <span class="nx">Parse</span><span class="p">.</span><span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="s2">&quot;Post&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// create instances of the subClass</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Post</span><span class="p">();</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">post2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Post</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// set and save the objects</span>
+</span><span class='line'><span class="nx">post</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;got some text in here&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">post</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">post2</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;look at me, saving text&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">post2</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Argh.  Might have to skip over the Parse tutorial for now and come back to it.</p>
+
+<p>Oh wait!  After waiting long enough to type this entry out.  I&#8217;m now allowed to
+test my code.  That i know is correct.</p>
+
+<p><img src="http://puu.sh/1QSsH"></p>
+
+<p>Oops try again.
+Wait, &#8216;like&#8217; key?  That&#8217;s not even in this step.</p>
+
+<p>Bah.</p>
+
+<p>Hint repeating the exact same text above it?</p>
+
+<p><img src="http://puu.sh/1QSx6"></p>
+
+<p>Bah.</p>
+
+<p>Looks like I picked the wrong week to quit sniffing glue.</p>
+
+<p>Another time then&#8230;</p>
+
+<h4>Wait!</h4>
+
+<p>Hoozah!  The coderunner has finally decided it will give my exact same code another
+chance.  And guess what!  It works!</p>
+
+<p>Woot woot.</p>
+
+<p>Hmm.  maybe this is some new alternative learning method.  Make you read your code a hundred
+times.  Make you read the docs a hundred times.  Get frustrated.  yell, research.</p>
+
+<p>And just when its realy sunk in.  BAM!  That very same original code is now acceptable.</p>
+
+<p>Very alternative&#8230; Kudos Parse and CodeAcademy.  Kudos.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adamin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T17:03:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/parse/'>parse</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse/" data-via="" data-counturl="http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/21/initializing-parse/" title="Previous Post: Initializing Parse">&laquo; Initializing Parse</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/basic-objects-in-parse/">Basic Objects in Parse</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/initializing-parse/">Initializing Parse</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/parse-on-codeacademy/">Parse on CodeAcademy</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/20/playing-with-parse/">Playing With Parse</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/20/hellow-orld/">hellow orld</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/pensive612">@pensive612</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'pensive612',
+            count: 3,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Adamin -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'adamin';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse/';
+        var disqus_url = 'http://pensive612.github.com/blog/2013/01/21/basic-objects-in-parse/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
