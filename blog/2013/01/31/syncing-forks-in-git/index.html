@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Cheatsheet - Adamin</title>
+  <title>How to Sync Forks in Git - Adamin</title>
   <meta name="author" content="Adamin">
 
   
-  <meta name="description" content="My Octopress Cheatsheet Jan 21st, 2013 So it would seem lots of people are creating Octopress Cheatsheets on their blog.
-And I quickly see why. Here &hellip;">
+  <meta name="description" content="I needed a workflow for a project I was working on where all my code would
+be strictly reviewed before it was merged into a repo. This would be a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ And I quickly see why. Here &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pensive612.github.com/octopress-cheatsheet/">
+  <link rel="canonical" href="http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,148 +77,15 @@ And I quickly see why. Here &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">My Octopress Cheatsheet</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-21T05:59:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time></p>
-  </header>
-  
-  <p>So it would seem lots of people are creating Octopress Cheatsheets on their blog.
-And I quickly see why.</p>
-
-<p>Here&#8217;s the first heads up.  Every time I run any task, I get:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake aborted!
-</span><span class='line'>You have already activated rake 10.0.3, but your Gemfile requires rake 0.9.2.2.
-</span><span class='line'>Using bundle exec may solve this.</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After researching a bit, its obviously a conflict with my gemlock file and 2 different
-versions of rake.</p>
-
-<p>However, rather than modify anything.  People say you should be using <code>bundle exec</code> first anyway.</p>
-
-<p>So for now, imagine I&#8217;m prefixing any rake command with <code>bundle exec</code>  Yes.  It is as fun as it sounds.</p>
-
-<h4>Site Generating</h4>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate # Use this to generate the newly create posts and pages
-</span><span class='line'>rake watch    # Watch for changes while you're editing source files
-</span><span class='line'>rake preview  # Watch and Create server at localhost:4000
-</span><span class='line'>rake deploy   # Commits and deploys your site to the remote branch
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>Content Generators</h4>
-
-<p><em>Although as of now, the generators appear a bit broken for me, maybe it just needs new documentation.  not sure.</em></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["Zombie Ninjas Attack"]
-</span><span class='line'># Should work, but doesn't for me.  Instead I have to use
-</span><span class='line'>rake new_post
-</span><span class='line'># It asks me the title, and I give it.  Not bad...</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The header generates the following:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>---
-</span><span class='line'>layout: post
-</span><span class='line'>title: "Zombie Ninjas Attack"
-</span><span class='line'>date: 2011-07-03 5:59
-</span><span class='line'>comments: true
-</span><span class='line'>external-url:
-</span><span class='line'>categories:
-</span><span class='line'>---
-</span><span class='line'>
-</span><span class='line'># You could also add
-</span><span class='line'>published: false
-</span><span class='line'>
-</span><span class='line'># Remember, categories is an array []</span></code></pre></td></tr></table></div></figure>
-
-
-<p>and for pages</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[super-awesome]
-</span><span class='line'># should work, but doesn't at all for me.</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So I manually create the file in source/</p>
-
-<p>ie.  source/cheatsheet/index.markdown</p>
-
-<p>And manually need to copy the headers:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>---
-</span><span class='line'>layout: page
-</span><span class='line'>title: "Page Title Here"
-</span><span class='line'>date: 2011-07-03 5:59
-</span><span class='line'>comments: true
-</span><span class='line'>sharing: true
-</span><span class='line'>footer: true
-</span><span class='line'>---</span></code></pre></td></tr></table></div></figure>
-
-
-<p>*On a sidenote. Its almost mandatory to use some sort of LiveReload with rake preview these days.
-I can&#8217;t imagine editing pages without it anymore. Funny how quickly things change.</p>
-
-<p>But I noticed you need to set a delay on LiveReload otherwise, it works faster than preview server.</p>
-
-<p>I&#8217;ve set mine to 1 second, and it works great.</p>
-
-<p><img src="http://puu.sh/1QHnk"></p>
-
-  
-    <footer>
+    
+      <h1 class="entry-title">How to Sync Forks in Git</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -230,21 +97,178 @@ I can&#8217;t imagine editing pages without it anymore. Funny how quickly things
   
 
 
-<time datetime="2013-01-21T05:59:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+<time datetime="2013-01-31T23:48:00-08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I needed a workflow for a project I was working on where all my code would
+be strictly reviewed before it was merged into a repo.</p>
+
+<p>This would be a continuous process for a while.  I came across a great github
+page, and merged it with some other advice out there.</p>
+
+<p>This is how we settled on doing it:</p>
+
+<!-- more -->
+
+
+<hr />
+
+<ul>
+<li>The first thing I did was fork the repo.  This allowed me to work on my own codebase
+and the PM to have full control over what was brought into their codebase.
+<img src="http://puu.sh/1VJlp"></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Next I cloned the repo onto my local machine:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:pensive612/Adamin-Clone.git</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<ul>
+<li>Then I create my development branch on my local machine.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -b full-screen</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p>Made my edits.  But wait.  They finished a page that I might want to use to for
+extra testing.  Good time to set up my fork syncing process.</p>
+
+<hr />
+
+<p>It can get confusing with all the variations of the word &#8216;master&#8217; out there,
+and in one conversation we were already trying to find a new way to refer to
+the all out master sync repo.  Without using that confusing word, &#8216;master&#8217;</p>
+
+<p>Well, the brains at GitHub thought of a perfect one, if you ask me.</p>
+
+<p>&#8216;Upstream&#8217;.  That is the name of our sync only repo.</p>
+
+<p>So I add &#8216;upstream&#8217; branch to my git remotes.  (I don&#8217;t need to worry about anything
+but read access.  So http is fine.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add upstream https://github.com/bigrepo/repo.git
+</span><span class='line'>git remote -v
+</span><span class='line'># origin    git@github.com:pensive612/Adamin-Clone.git (fetch)
+</span><span class='line'># origin    git@github.com:pensive612/Adamin-Clone.git (push)
+</span><span class='line'># upstream  https://github.com/bigrepo/repo.git (fetch)
+</span><span class='line'># upstream  https://github.com/bigrepo/repo.git (push)</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p>And now for the sync part.</p>
+
+<p>Rather than pulling from my <code>remote origin</code> like I normally do.  I&#8217;m gonna
+<a href="http://git-scm.com/docs/git-fetch">fetch</a> from the <code>remote: upstream</code>.
+Which is really just pulling down extra head info into my repo.</p>
+
+<p>So now, just doing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git fetch upstream</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Gives me all this cool branch data from &#8216;Upstream&#8217;.</p>
+
+<p>And since we don&#8217;t sync from &#8216;master&#8217; on &#8216;Upstream&#8217;, we sync from a QA branch.</p>
+
+<p>I now merge that specific branch into my current.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git merge upstream/qa-branch</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And awesome.  I get a recursive commit with all the synced fork data in there.
+Ready for me to review my changes.  And get ready to push to my origin.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push origin</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once that&#8217;s done, I log into GitHub and create my pull request.</p>
+
+<p>And we&#8217;re done.  The circle of life.</p>
+
+<p>Hope that helps somebody out there.</p>
+
+<p>If it doesn&#8217;t, please don&#8217;t hesitate to ask me any questions, or show me how I
+completely missed the correct way of doing it.</p>
+
+<p>Take care.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pensive612.github.com/octopress-cheatsheet/index.html" data-via="" data-counturl="http://pensive612.github.com/octopress-cheatsheet/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Adamin</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-31T23:48:00-08:00" pubdate data-updated="true">Jan 31<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git/" data-via="" data-counturl="http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git/" >Tweet</a>
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2013/01/22/real-up-in-here-parse/" title="Previous Post: Its Time To Get Real Up In Here, Parse.">&laquo; Its Time To Get Real Up In Here, Parse.</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -344,8 +368,8 @@ I can&#8217;t imagine editing pages without it anymore. Funny how quickly things
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pensive612.github.com/octopress-cheatsheet/index.html';
-        var disqus_url = 'http://pensive612.github.com/octopress-cheatsheet/index.html';
+        var disqus_identifier = 'http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git/';
+        var disqus_url = 'http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git/';
         var disqus_script = 'embed.js';
       
     (function () {

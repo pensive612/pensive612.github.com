@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Adamin]]></title>
+  <link href="http://pensive612.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://pensive612.github.com/"/>
+  <updated>2013-02-01T00:36:23-08:00</updated>
+  <id>http://pensive612.github.com/</id>
+  <author>
+    <name><![CDATA[Adamin]]></name>
+    <email><![CDATA[github@adamin.net]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to Sync Forks in Git]]></title>
+    <link href="http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git/"/>
+    <updated>2013-01-31T23:48:00-08:00</updated>
+    <id>http://pensive612.github.com/blog/2013/01/31/syncing-forks-in-git</id>
+    <content type="html"><![CDATA[<p>I needed a workflow for a project I was working on where all my code would
+be strictly reviewed before it was merged into a repo.</p>
+
+<p>This would be a continuous process for a while.  I came across a great github
+page, and merged it with some other advice out there.</p>
+
+<p>This is how we settled on doing it:</p>
+
+<!-- more -->
+
+
+<hr />
+
+<ul>
+<li>The first thing I did was fork the repo.  This allowed me to work on my own codebase
+and the PM to have full control over what was brought into their codebase.
+<img src="http://puu.sh/1VJlp"></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Next I cloned the repo onto my local machine:
+<code>
+git clone git@github.com:pensive612/Adamin-Clone.git
+</code></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Then I create my development branch on my local machine.
+<code>
+git checkout -b full-screen
+</code></li>
+</ul>
+
+
+<hr />
+
+<p>Made my edits.  But wait.  They finished a page that I might want to use to for
+extra testing.  Good time to set up my fork syncing process.</p>
+
+<hr />
+
+<p>It can get confusing with all the variations of the word 'master' out there,
+and in one conversation we were already trying to find a new way to refer to
+the all out master sync repo.  Without using that confusing word, 'master'</p>
+
+<p>Well, the brains at GitHub thought of a perfect one, if you ask me.</p>
+
+<p>'Upstream'.  That is the name of our sync only repo.</p>
+
+<p>So I add 'upstream' branch to my git remotes.  (I don't need to worry about anything
+but read access.  So http is fine.</p>
+
+<p>```
+git remote add upstream https://github.com/bigrepo/repo.git
+git remote -v</p>
+
+<h1>origin    git@github.com:pensive612/Adamin-Clone.git (fetch)</h1>
+
+<h1>origin    git@github.com:pensive612/Adamin-Clone.git (push)</h1>
+
+<h1>upstream  https://github.com/bigrepo/repo.git (fetch)</h1>
+
+<h1>upstream  https://github.com/bigrepo/repo.git (push)</h1>
+
+<p>```</p>
+
+<hr />
+
+<p>And now for the sync part.</p>
+
+<p>Rather than pulling from my <code>remote origin</code> like I normally do.  I'm gonna
+<a href="http://git-scm.com/docs/git-fetch">fetch</a> from the <code>remote: upstream</code>.
+Which is really just pulling down extra head info into my repo.</p>
+
+<p>So now, just doing
+<code>
+git fetch upstream
+</code></p>
+
+<p>Gives me all this cool branch data from 'Upstream'.</p>
+
+<p>And since we don't sync from 'master' on 'Upstream', we sync from a QA branch.</p>
+
+<p>I now merge that specific branch into my current.</p>
+
+<p><code>
+git merge upstream/qa-branch
+</code></p>
+
+<p>And awesome.  I get a recursive commit with all the synced fork data in there.
+Ready for me to review my changes.  And get ready to push to my origin.</p>
+
+<p><code>
+git push origin
+</code></p>
+
+<p>Once that's done, I log into GitHub and create my pull request.</p>
+
+<p>And we're done.  The circle of life.</p>
+
+<p>Hope that helps somebody out there.</p>
+
+<p>If it doesn't, please don't hesitate to ask me any questions, or show me how I
+completely missed the correct way of doing it.</p>
+
+<p>Take care.</p>
+]]></content>
+  </entry>
+  
+</feed>
